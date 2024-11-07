@@ -1,0 +1,15 @@
+﻿services:
+  api_showcase:
+    image: api_showcase
+    build:
+      context: .
+      dockerfile: API_Showcase/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+  telegraf:
+    image: telegraf
+    container_name: telegraf
+    restart: always
+    volumes:
+      - ./Telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro

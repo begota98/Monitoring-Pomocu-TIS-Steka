@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  api_showcase:
+    build:
+      context: "/home/begota/Documents/GitHub/Monitoring-Pomocu-TIS-Steka/API_Showcase"
+      dockerfile: "API_Showcase/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/API_Showcase.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "api_showcase:dev"
+    ports: []
+    volumes:
+    - "/home/begota/.nuget/packages:/home/app/.nuget/packages"
+    - "/home/begota/Documents/GitHub/Monitoring-Pomocu-TIS-Steka/API_Showcase/API_Showcase:/app:rw"
+    - "/home/begota/Documents/GitHub/Monitoring-Pomocu-TIS-Steka/API_Showcase:/src:rw"
+    working_dir: "/app"
